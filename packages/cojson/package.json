@@ -7,9 +7,9 @@
     "license": "MIT",
     "version": "0.6.2",
     "devDependencies": {
-        "@noble/curves": "^1.2.0",
+        "    "@noble/curves": "^1.2.0",
         "@types/jest": "^29.5.3",
-        "@typescript-eslint/eslint-plugin": "^6.2.1",
+        "@typescript-eslint/eslint-plugin": "^8.0.0",
         "@typescript-eslint/parser": "^6.2.1",
         "eslint": "^8.46.0",
         "eslint-plugin-require-extensions": "^0.1.3",
