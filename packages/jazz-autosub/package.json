@@ -7,12 +7,13 @@
     "license": "MIT",
     "version": "0.6.0",
     "dependencies": {
+        "cojson": "^0.6.1",
         "cojson": "^0.6.0"
     },
     "scripts": {
         "test": "jest",
         "lint": "eslint src/**/*.ts",
-        "build": "npm run lint && rm -rf ./dist && tsc --sourceMap --outDir dist",
+        "build": "tsc"
         "prepublishOnly": "npm run build"
     },
     "jest": {
@@ -30,7 +31,7 @@
             "(.+)\\.js": "$1"
         },
         "extensionsToTreatAsEsm": [
-            ".ts"
+            ".ts", ".tsx"
         ],
         "modulePathIgnorePatterns": [
             "/node_modules/",
