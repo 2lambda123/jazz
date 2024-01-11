@@ -200,7 +200,7 @@ export class AutoSubContext {
         }
     >(
         obj: O,
-        subqueryProps: P,
+        subqueryProps: CoID<CoValue>[] | P,
         alsoRender: CoID<CoValue>[]
     ): O & {
         [Key in keyof P]: ValueOrResolvedRef<P[Key]["value"]>;
@@ -208,7 +208,9 @@ export class AutoSubContext {
         for (const [key, descriptor] of Object.entries(subqueryProps)) {
             Object.defineProperty(obj, key, {
                 ...this.valueOrResolvedRefPropertyDescriptor(
-                    descriptor.value,
+                    Array.isArray(descriptor.value) 
+? descriptor.value.map(val => this.autoSub(val, alsoRender, key)) :
+this.valueOrResolvedRefPropertyDescriptor(descriptor.value, alsoRender, key),
                     alsoRender,
                     key
                 ),
