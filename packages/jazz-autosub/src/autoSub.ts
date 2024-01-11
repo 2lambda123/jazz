@@ -221,7 +221,7 @@ export class AutoSubContext {
     }
 
     getOrCreateExtension<T extends CoValue, O>(
-        valueID: CoID<T>,
+        valueID: CoID<T>[] | CoID<T>,
         extension: AutoSubExtension<T, O>
     ): O | undefined {
         const id = `${valueID}_${extension.id}`;
