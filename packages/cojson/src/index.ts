@@ -56,7 +56,7 @@ import type {
     ProfileMeta,
 } from "./coValues/account.js";
 import type { InviteSecret } from "./coValues/group.js";
-import type * as Media from "./media.js";
+import type * as Media from "./media";
 
 type Value = JsonValue | AnyCoValue;
 
